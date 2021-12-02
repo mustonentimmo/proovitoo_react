@@ -4,7 +4,7 @@ import NavItem from '../NavItem/NavItem'
 import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.css'
 
-function Navbar() {
+const Navbar = () => {
 
     const [open, SetOpen] = useState(false);
     const handleToggle = () => {

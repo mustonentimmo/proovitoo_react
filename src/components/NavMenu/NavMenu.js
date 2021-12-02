@@ -1,6 +1,6 @@
 import './NavMenu.css'
 
-function NavMenu(props) {
+const NavMenu = (props) => {
     return (
         <ul className={`main-nav__menu ${props.open ? 'active' : ''}`}>
             {props.children}

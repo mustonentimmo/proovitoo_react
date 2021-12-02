@@ -1,6 +1,6 @@
 import './NavHamburger.css'
 
-function NavHamburger (props) {
+const NavHamburger = (props) => {
     return (
         <div className={`main-nav__hamburger ${props.open ? 'active' : ''}`} onClick={props.handleToggle}>
             <span className="main-nav__hamburger-bar"></span>
