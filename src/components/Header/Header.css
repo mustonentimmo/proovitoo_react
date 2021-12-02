@@ -1,0 +1,11 @@
+
+.header {
+    display: grid;
+    column-gap: var(--spc-medium);
+    grid-template-columns:
+    minmax(1.6rem, 15.2rem) minmax(40rem, 2fr) minmax(27rem, 1fr)
+    minmax(1.6rem, 15.2rem);
+    grid-column: 1/-1;
+    background: #3b5bdb;
+    margin-bottom: 5.6rem;
+}

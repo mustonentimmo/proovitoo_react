@@ -1,0 +1,21 @@
+.main-nav__menu-item {
+    display: flex;
+    align-items: center;
+    transition: var(--transition-regular);
+    -webkit-transition: var(--transition-regular);
+}
+
+.main-nav__menu-item:hover {
+    background: var(--clr-violet-hover);
+}
+
+.main-nav__menu-item-link {
+    display: inline-block;
+    padding: var(--spc-regular);
+    color: white;
+    font-size: var(--fs-small);
+}
+
+.main-nav__menu-item.active {
+    background: var(--clr-violet-hover);
+}
