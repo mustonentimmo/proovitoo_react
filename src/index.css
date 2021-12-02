@@ -24,17 +24,13 @@
   --clr-background: #e5e5e5;
   --clr-white: #ffffff;
   --clr-black: #000000;
-  --clr-blue-dark: #032230;
-  --clr-blue-lighter: #032230;
   --clr-violet: #3b5bdb;
   --clr-violet-hover: #364fc7;
-  --clr-accent: #1396d4;
   --clr-green: #008000;
   --clr-red: #ff0000;
   --clr-baby-pink: #fcd3d4;
   --clr-baby-blue: #a0f4dc;
   --clr-grey: #696969;
-  --clr-light-grey: #efefef;
   /* radius */
   --rd-searchbar: 0.4rem;
   --rd-circle: 6.4rem;
@@ -43,7 +39,6 @@
   --spc-small: 1.9rem;
   --spc-regular: 2.4rem;
   --spc-medium: 4rem;
-  --spc-big: 4.8rem;
   /* line-height */
   --lnh-small: 1.6rem;
   --lnh-regular: 2.4rem;
