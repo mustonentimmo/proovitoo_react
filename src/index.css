@@ -70,20 +70,4 @@ img {
   width: 100%;
 }
 
-/* media queries */
 
-@media only screen and (max-width: 840px) {
-
-  .main-nav__hamburger {
-    display: inline-block !important;
-    cursor: pointer;
-    z-index: 3;
-  }
-
-  .main-nav__menu-item {
-    width: 100%;
-    justify-content: center;
-    cursor: pointer;
-  }
-
-}
