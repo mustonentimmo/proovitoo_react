@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
 }
 
 :root {
@@ -24,8 +23,10 @@
   --clr-background: #e5e5e5;
   --clr-white: #ffffff;
   --clr-black: #000000;
+
   --clr-violet: #3b5bdb;
   --clr-violet-hover: #364fc7;
+
   --clr-green: #008000;
   --clr-red: #ff0000;
   --clr-baby-pink: #fcd3d4;
@@ -60,6 +61,7 @@ body {
 a {
   text-decoration: none;
 }
+
 
 ul {
   list-style: none;
