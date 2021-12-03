@@ -19,3 +19,13 @@
 .main-nav__menu-item.active {
     background: var(--clr-violet-hover);
 }
+
+@media only screen and (max-width: 840px) {
+
+    .main-nav__menu-item {
+        width: 100%;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+}

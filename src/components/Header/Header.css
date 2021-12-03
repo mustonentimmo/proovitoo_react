@@ -9,3 +9,11 @@
     background: #3b5bdb;
     margin-bottom: 5.6rem;
 }
+
+@media only screen and (max-width: 840px) {
+    .header {
+        display: grid;
+        column-gap: 0 !important;
+        grid-template-columns: minmax(0.5rem, 1.6rem) auto minmax(0.5rem, 1.6rem);
+    }
+}

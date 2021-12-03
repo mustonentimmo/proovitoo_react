@@ -6,36 +6,10 @@
     margin-left: -4rem;
 }
 
-.main-nav__menu {
-    display: flex;
-    height: 100%;
+@media only screen and (max-width: 840px) {
+    .main-nav {
+        margin: 0;
+    }
 }
 
-.main-nav__hamburger {
-    display: none;
-    position: relative;
-}
 
-.main-nav__hamburger::after {
-    content: "Menu";
-    color: white;
-    position: absolute;
-    left: 190%;
-    top: 0;
-    font-size: var(--fs-regular);
-    cursor: default;
-    pointer-events: none;
-}
-
-.main-nav__hamburger-bar {
-    display: block;
-    width: 25.43px;
-    height: 2px;
-    -webkit-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-    background-color: #ffffff;
-}
-
-.main-nav__hamburger-bar:nth-child(2) {
-    margin: 8px auto;
-}
