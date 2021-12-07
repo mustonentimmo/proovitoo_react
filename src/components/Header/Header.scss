@@ -9,10 +9,7 @@
     margin-bottom: 5.6rem;
 
     @media only screen and (max-width: 840px) {
-        & {
-            display: grid;
-            column-gap: 0 !important;
-            grid-template-columns: minmax(0.5rem, 1.6rem) auto minmax(0.5rem, 1.6rem);
-        }
+        column-gap: 0;
+        grid-template-columns: minmax(0.5rem, 1.6rem) auto minmax(0.5rem, 1.6rem);
     }
 }

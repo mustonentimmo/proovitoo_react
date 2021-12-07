@@ -2,29 +2,22 @@
     display: flex;
     align-items: center;
     transition: var(--transition-regular);
-    -webkit-transition: var(--transition-regular);
 
     &:hover {
         background: var(--clr-violet-hover);
     }
 
-    &-link {
+    @media only screen and (max-width: 840px) {
+        width: 100%;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__link {
         display: inline-block;
         padding: var(--spc-regular);
         color: white;
         font-size: var(--fs-small);
-    }
-
-    &.active {
-        background: var(--clr-violet-hover);
-    }
-
-    @media only screen and (max-width: 840px) {
-        & {
-            width: 100%;
-            justify-content: center;
-            cursor: pointer;
-        }
     }
 }
 

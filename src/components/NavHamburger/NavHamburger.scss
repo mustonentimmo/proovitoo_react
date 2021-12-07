@@ -1,4 +1,4 @@
-.main-nav__hamburger {
+.nav-hamburger {
     $parent: &;
 
     display: none;
@@ -15,11 +15,16 @@
         pointer-events: none;
     }
 
-    &-bar {
+    @media only screen and (max-width: 840px) {
+        display: inline-block !important;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    &__bar {
         display: block;
         width: 25.43px;
         height: 2px;
-        -webkit-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
         transition: all 0.5s cubic-bezier(1, 0, 0, 1);
         background-color: #ffffff;
 
@@ -28,27 +33,20 @@
         }
 
         @media only screen and (max-width: 840px) {
-            #{$parent}.active &:nth-child(2) {
+            #{$parent}--is-active &:nth-child(2) {
                 opacity: 0;
             }
 
-            #{$parent}.active &:nth-child(1) {
+            #{$parent}--is-active &:nth-child(1) {
                 transform: translateY(11px) rotate(45deg);
             }
 
-            #{$parent}.active &:nth-child(3) {
+            #{$parent}--is-active &:nth-child(3) {
                 transform: translateY(-9px) rotate(-45deg);
             }
         }
     }
 
-    @media only screen and (max-width: 840px) {
-        & {
-            display: inline-block !important;
-            cursor: pointer;
-            z-index: 3;
-        }
-    }
 }
 
 
