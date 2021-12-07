@@ -6,7 +6,7 @@ import './Navbar.scss'
 
 const Navbar = () => {
     const [open, SetOpen] = useState(false);
-    const handleToggle = () => {
+    const handleHamburgerToggle = () => {
         SetOpen(prev => !prev);
     }
 
@@ -18,7 +18,7 @@ const Navbar = () => {
                 <NavItem title="Events" />
                 <NavItem title="Gallery" />
             </NavMenu>
-            <NavHamburger open={open} handleToggle={handleToggle}/>
+            <NavHamburger open={open} onToggle={handleHamburgerToggle}/>
         </nav>
     )
 }
