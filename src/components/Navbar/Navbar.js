@@ -5,7 +5,6 @@ import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.scss'
 
 const Navbar = () => {
-
     const [open, SetOpen] = useState(false);
     const handleToggle = () => {
         SetOpen(prev => !prev);
