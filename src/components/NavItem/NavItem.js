@@ -1,4 +1,4 @@
-import './NavItem.css'
+import './NavItem.scss'
 
 const navItem = (props) => {
     return (

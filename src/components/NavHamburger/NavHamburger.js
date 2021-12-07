@@ -1,4 +1,4 @@
-import './NavHamburger.css'
+import './NavHamburger.scss'
 
 const NavHamburger = (props) => {
     return (

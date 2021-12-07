@@ -2,7 +2,7 @@ import {useState} from "react";
 import NavMenu from "../NavMenu/NavMenu";
 import NavItem from '../NavItem/NavItem'
 import NavHamburger from "../NavHamburger/NavHamburger";
-import './Navbar.css'
+import './Navbar.scss'
 
 const Navbar = () => {
 
