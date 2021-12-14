@@ -23,13 +23,13 @@
 
     &__bar {
         display: block;
-        width: 25.43px;
-        height: 2px;
+        width: 2.5rem;
+        height: 0.2rem;
         transition: all 0.5s cubic-bezier(1, 0, 0, 1);
         background-color: #ffffff;
 
         &:nth-child(2) {
-            margin: 8px auto;
+            margin: 0.8rem auto;
         }
 
         @media only screen and (max-width: 840px) {
