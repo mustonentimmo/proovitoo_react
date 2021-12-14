@@ -8,10 +8,10 @@ const Navbar = () => {
         SetOpen(prev => !prev);
     }
     return(
-        <nav className="main-nav">
-            <ul className={`main-nav__menu ${open ? 'main-nav__menu--is-active' : ''}`}>
-                <li className="main-nav__nav-item">
-                    <a href="#" className="main-nav__nav-item__link">home</a>
+        <nav className="navbar">
+            <ul className={`navbar__menu ${open ? 'navbar__menu--is-active' : ''}`}>
+                <li className="navbar__menu-item">
+                    <a href="#" className="navbar__menu-item__link">home</a>
                 </li>
             </ul>
             <NavHamburger open={open} onToggle={handleHamburgerToggle}/>
