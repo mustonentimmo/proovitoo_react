@@ -1,6 +1,4 @@
 import {useState} from "react";
-import NavMenu from "../NavMenu/NavMenu";
-import NavItem from '../NavItem/NavItem'
 import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.scss'
 
@@ -9,15 +7,13 @@ const Navbar = () => {
     const handleHamburgerToggle = () => {
         SetOpen(prev => !prev);
     }
-
     return(
         <nav className="main-nav">
-            <NavMenu open={open}>
-                <NavItem title="Home" />
-                <NavItem title="Blog" />
-                <NavItem title="Events" />
-                <NavItem title="Gallery" />
-            </NavMenu>
+            <ul className={`main-nav__menu ${open ? 'main-nav__menu--is-active' : ''}`}>
+                <li className="main-nav__nav-item">
+                    <a href="#" className="main-nav__nav-item__link">home</a>
+                </li>
+            </ul>
             <NavHamburger open={open} onToggle={handleHamburgerToggle}/>
         </nav>
     )
