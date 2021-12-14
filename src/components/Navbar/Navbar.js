@@ -8,15 +8,20 @@ const Navbar = () => {
         SetOpen(prev => !prev);
     }
 
-    let links = ['Home', 'Blog', 'Events', 'Gallery'];
+    let links = [
+        {id: 1, title: 'Home'},
+        {id: 2, title: 'Blog'},
+        {id: 3, title: 'Events'},
+        {id: 4, title: 'Gallery'}
+    ];
 
     return(
         <nav className="navbar">
             <ul className={`navbar__menu ${open ? 'navbar__menu--is-active' : ''}`}>
                 {
                     links.map(link => (
-                        <li className="navbar__menu-item">
-                            <a href="#" className="navbar__menu-item__link">{link}</a>
+                        <li key={link.id} className="navbar__menu-item">
+                            <a href="#" className="navbar__menu-item__link">{link.title}</a>
                         </li>
                         )
                     )
