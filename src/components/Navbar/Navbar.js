@@ -3,7 +3,7 @@ import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.scss'
 
 const Navbar = () => {
-    const [open, SetOpen] = useState(false);
+    const [isOpen, SetOpen] = useState(false);
     const handleHamburgerToggle = () => {
         SetOpen(prev => !prev);
     }
@@ -17,7 +17,7 @@ const Navbar = () => {
 
     return(
         <nav className="navbar">
-            <ul className={`navbar__menu ${open ? 'navbar__menu--is-active' : ''}`}>
+            <ul className={`navbar__menu ${isOpen ? 'navbar__menu--is-active' : ''}`}>
                 {
                     links.map(link => (
                         <li key={link.id} className="navbar__menu-item">
@@ -27,7 +27,7 @@ const Navbar = () => {
                     )
                 }
             </ul>
-            <NavHamburger open={open} onToggle={handleHamburgerToggle}/>
+            <NavHamburger isOpen={isOpen} onToggle={handleHamburgerToggle}/>
         </nav>
     )
 }
