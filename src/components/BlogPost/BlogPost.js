@@ -12,8 +12,8 @@ const BlogPost = () => (
                 <p>The following is reformatted from a presentation I gave at LinkedIn last year. The presentation attempted to explain functional programming without using concepts like “monads” or “immutability” or “side effects”. Instead it focuses on how thinking about composition can make you a better programmer, regardless of what language you use.</p>
             </div>
             <div className="blog-post__tags">
-                <div className="blog-post__tag">#Learning</div>
-                <div className="blog-post__tag">#React</div>
+                <a href="#" className="blog-post__tag">#Learning</a>
+                <a href="#" className="blog-post__tag">#React</a>
             </div>
             <ul className="blog-post__feedbacks">
                 <li className="blog-post__feedback">7 views</li>
