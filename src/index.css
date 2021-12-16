@@ -70,3 +70,29 @@ img {
   width: 100%;
 }
 
+/* typography */
+
+h1,
+h2 {
+    font-family: var(--f-secondary);
+}
+
+h1 {
+    font-size: clamp(var(--fs-big), 2vw, var(--fs-huge));
+    font-weight: var(--fw-regular);
+}
+
+h2 {
+    font-size: var(--fs-big);
+}
+
+h3 {
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-medium);
+}
+
+p {
+    font-size: var(--fs-regular);
+    line-height: var(--lnh-regular);
+}
+
