@@ -3,15 +3,6 @@
     display: grid;
     column-gap: var(--spc-medium);
     grid-template-columns: minmax(1.6rem, 15.2rem) minmax(40rem, 2fr) minmax(27rem, 1fr) minmax(1.6rem, 15.2rem);
-
-    @include for-phone-only {
-      & {
-        display: grid;
-        column-gap: 0;
-        grid-template-columns: minmax(0.5rem, 1.6rem) auto minmax(0.5rem, 1.6rem);
-      }
-    }
-
   }
 
   &__inner {
