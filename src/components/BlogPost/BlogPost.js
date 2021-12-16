@@ -41,7 +41,7 @@ const BlogPost = () => (
                 <div className="blog-post__tags">
                 {
                     post.postTags.map(tag => (
-                        <a href="#" className="blog-post__tag">{tag}</a>
+                        <a key={tag} href="#" className="blog-post__tag">{tag}</a>
                         )
                     )
                 }
