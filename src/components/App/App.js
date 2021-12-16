@@ -1,6 +1,4 @@
 import './App.css';
-
-import '../Header/Header'
 import Header from "../Header/Header";
 
 const App = () => (
