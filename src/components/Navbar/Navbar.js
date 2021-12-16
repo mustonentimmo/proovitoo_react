@@ -8,7 +8,7 @@ const Navbar = () => {
         SetOpen(prev => !prev);
     }
 
-    let links = [
+    const links = [
         {id: 1, title: 'Home'},
         {id: 2, title: 'Blog'},
         {id: 3, title: 'Events'},
