@@ -1,4 +1,5 @@
 import "./BlogPost.scss"
+import HorizontalList from "../HorizontalList/HorizontalList";
 
 const posts = [
     {
@@ -45,6 +46,7 @@ const BlogPost = () => (
                     )
                 }
                 </div>
+                <HorizontalList data={post.postFeedback}/>
             </div>
         </div>
     ))
