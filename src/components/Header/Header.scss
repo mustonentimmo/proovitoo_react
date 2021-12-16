@@ -1,0 +1,15 @@
+.header {
+    display: grid;
+    column-gap: var(--spc-medium);
+    grid-template-columns:
+    minmax(1.6rem, 15.2rem) minmax(40rem, 2fr) minmax(27rem, 1fr)
+    minmax(1.6rem, 15.2rem);
+    grid-column: 1/-1;
+    background: var(--clr-violet);
+    margin-bottom: 5.6rem;
+
+    @media only screen and (max-width: 840px) {
+        column-gap: 0;
+        grid-template-columns: minmax(0.5rem, 1.6rem) auto minmax(0.5rem, 1.6rem);
+    }
+}

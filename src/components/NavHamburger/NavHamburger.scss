@@ -1,0 +1,56 @@
+.nav-hamburger {
+    $parent: &;
+
+    display: none;
+    position: relative;
+
+    &::after {
+        content: "Menu";
+        color: var(--clr-white);
+        position: absolute;
+        left: 190%;
+        top: 0;
+        font-size: var(--fs-regular);
+        cursor: default;
+        pointer-events: none;
+    }
+
+    @media only screen and (max-width: 840px) {
+        display: inline-block;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    &__bar {
+        display: block;
+        width: 2.5rem;
+        height: 0.2rem;
+        transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+        background-color: #ffffff;
+
+        &:nth-child(2) {
+            margin: 0.8rem auto;
+        }
+
+        @media only screen and (max-width: 840px) {
+            #{$parent}--is-active &:nth-child(2) {
+                opacity: 0;
+            }
+
+            #{$parent}--is-active &:nth-child(1) {
+                transform: translateY(11px) rotate(45deg);
+            }
+
+            #{$parent}--is-active &:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
