@@ -1,0 +1,42 @@
+.blog-post {
+    display: block;
+    min-width: 100%;
+    max-width: 74.4rem;
+    background: var(--clr-white);
+
+    &:not(:first-of-type) {
+      margin-top: var(--spc-regular);
+    }
+
+    &__details {
+      padding: 1.6rem;
+    }
+
+    %font-styling {
+      font-size: var(--fs-small);
+      color: var(--clr-grey);
+    }
+
+    &__text, &__meta {
+      margin-top: var(--spc-small);
+    }
+
+    &__meta {
+      @extend %font-styling;
+    }
+
+    &__tags {
+      padding: 1.9rem 0;
+      border-bottom: 1px solid var(--clr-black);
+    }
+
+    &__tag {
+      @extend %font-styling;
+
+      &:not(:first-of-type) {
+        margin-left: 0.5rem;
+      }
+    }
+}
+
+
