@@ -2,7 +2,7 @@ import "./BlogPost.scss"
 
 const BlogPost = () => (
     <div className="blog-post">
-        <img className="blog-post__img" src="#" alt="" />
+        <img className="blog-post__img" src="" alt="" />
         <div className="blog-post__details">
             <div className="blog-post__title"></div>
             <div className="blog-post__meta">
@@ -15,11 +15,6 @@ const BlogPost = () => (
                 <a href="#" className="blog-post__tag">#Learning</a>
                 <a href="#" className="blog-post__tag">#React</a>
             </div>
-            <ul className="blog-post__feedbacks">
-                <li className="blog-post__feedback">7 views</li>
-                <li className="blog-post__feedback">3 comments</li>
-                <li className="blog-post__feedback">5 likes</li>
-            </ul>
         </div>
     </div>
 )
