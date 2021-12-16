@@ -1,9 +1,9 @@
 import "./HorizontalList.scss"
 
 const HorizontalList = (props) => (
-    <ul className="list">{
+    <ul className="horizontal-list">{
         props.data.map(dataItem => (
-            <li key={dataItem} className="list__item">
+            <li key={dataItem} className="horizontal-list__item">
                 {dataItem}
             </li>
             )
