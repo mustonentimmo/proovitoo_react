@@ -28,7 +28,9 @@ const BlogPost = () => (
         <div key={post.id} className="blog-post">
             <img className="blog-post__img" src={post.postImg} alt="" />
             <div className="blog-post__details">
-                <div className="blog-post__title">{post.title}</div>
+                <div className="blog-post__title">
+                    <h1>{post.title}</h1>
+                </div>
                 <div className="blog-post__meta">
                     Published by <span className="blog-post__author">{post.author}</span> on <span className="blog-post__published-date">{post.publishedAt}</span>
                 </div>
