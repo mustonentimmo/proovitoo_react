@@ -3,10 +3,10 @@ import Header from "../Header/Header";
 import BlogPost from "../BlogPost/BlogPost";
 
 const App = () => (
-    <div className="App">
-        <div className="App__grid-container">
+    <div className="app">
+        <div className="app__grid-container">
             <Header />
-            <main className="App__inner">
+            <main className="app__inner">
                 <BlogPost />
             </main>
         </div>

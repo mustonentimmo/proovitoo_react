@@ -1,6 +1,6 @@
 @import "src/assets/_breakpoints.scss";
 
-.App {
+.app {
   &__grid-container {
     display: grid;
     column-gap: var(--spc-medium);
