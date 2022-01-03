@@ -1,5 +1,7 @@
-@mixin phone-only {
-  @media only screen and (max-width: 840px) {
+@import "src/assets/_variables.scss";
+
+@mixin media-query($screen-width) {
+  @media only screen and (max-width: $screen-width) {
     @content;
   }
 }
