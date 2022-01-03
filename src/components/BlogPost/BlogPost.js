@@ -22,7 +22,7 @@ const BlogPost = (props) => (
                     )
                 }
                 </div>
-                <HorizontalList data={props.post.postFeedback}/>
+                <HorizontalList feedback={props.post.postFeedback}/>
             </div>
         </div>
 )

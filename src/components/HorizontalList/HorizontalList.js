@@ -2,7 +2,7 @@ import "./HorizontalList.scss"
 
 const HorizontalList = (props) => (
     <ul className="horizontal-list">{
-        props.data.map(dataItem => (
+        props.feedback.map(dataItem => (
             <li key={dataItem} className="horizontal-list__item">
                 {dataItem}
             </li>
