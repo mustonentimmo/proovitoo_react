@@ -4,8 +4,9 @@ import HorizontalList from "../HorizontalList/HorizontalList";
 
 interface BlogPostProps {
     post: {
-        postImg: string;
+        id: number;
         title: string;
+        postImg: string;
         author: string;
         publishedAt: string;
         postText: string;
