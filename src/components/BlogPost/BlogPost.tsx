@@ -11,7 +11,7 @@ interface BlogPostProps {
         publishedAt: string;
         postText: string;
         postTags: string[];
-        postFeedback: string;
+        postFeedback: string[];
     }
 }
 
