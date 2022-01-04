@@ -2,7 +2,7 @@ import React from 'react';
 import "./BlogPost.scss"
 import HorizontalList from "../HorizontalList/HorizontalList";
 
-interface blogPostProps {
+interface BlogPostProps {
     post: {
         postImg: string;
         title: string;
@@ -14,7 +14,7 @@ interface blogPostProps {
     }
 }
 
-const BlogPost: React.FC<blogPostProps> = (props) => (
+const BlogPost: React.FC<BlogPostProps> = (props) => (
         <div className="blog-post">
             <img className="blog-post__img" src={props.post.postImg} alt="" />
             <div className="blog-post__details">
