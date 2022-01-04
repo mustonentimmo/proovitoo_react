@@ -1,6 +1,11 @@
+import React from 'react';
 import "./HorizontalList.scss"
 
-const HorizontalList = (props) => (
+interface HorizontalListProps {
+    feedback: string[];
+}
+
+const HorizontalList: React.FC<HorizontalListProps> = (props) => (
     <ul className="horizontal-list">{
         props.feedback.map(dataItem => (
             <li key={dataItem} className="horizontal-list__item">
