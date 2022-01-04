@@ -8,7 +8,9 @@ const Navbar = () => {
         SetOpen(prev => !prev);
     }
 
-    const links = [
+    type LinksType = {id: number, title: string}[];
+
+    const links: LinksType = [
         {id: 1, title: 'Home'},
         {id: 2, title: 'Blog'},
         {id: 3, title: 'Events'},
