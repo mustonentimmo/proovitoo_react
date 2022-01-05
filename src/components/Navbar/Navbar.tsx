@@ -3,7 +3,7 @@ import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.scss'
 
 const Navbar = () => {
-    const [isOpen, SetOpen] = useState(false);
+    const [isOpen, SetOpen] = useState<boolean>(false);
     const handleHamburgerToggle = () => {
         SetOpen(prev => !prev);
     }
