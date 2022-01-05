@@ -1,4 +1,6 @@
-const posts = [
+import postInterface from "../common/types"
+
+const posts: postInterface[] = [
     {
         id: 1,
         title: "Practical Functional Programming",
