@@ -1,6 +1,6 @@
-import postInterface from "../common/types"
+import { Post } from "../common/types"
 
-const posts: postInterface[] = [
+const posts: Post[] = [
     {
         id: 1,
         title: "Practical Functional Programming",
