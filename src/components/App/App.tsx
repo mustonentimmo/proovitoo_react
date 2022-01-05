@@ -10,11 +10,11 @@ const App = () => {
     let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
 
     const handleChange = (value: string) => {
-        let searchQuery = posts.filter(post =>
+        let queryResults = posts.filter(post =>
             post.title.toLowerCase().includes(value)
         )
 
-        setFilteredPosts(searchQuery);
+        setFilteredPosts(queryResults);
     }
 
     return (
