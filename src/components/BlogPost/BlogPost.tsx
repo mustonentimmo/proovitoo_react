@@ -1,7 +1,9 @@
+import React from 'react';
 import "./BlogPost.scss"
 import HorizontalList from "../HorizontalList/HorizontalList";
+import PostInterface from "../../common/types"
 
-const BlogPost = (props) => (
+const BlogPost: React.FC<{post: PostInterface}> = (props) => (
         <div className="blog-post">
             <img className="blog-post__img" src={props.post.postImg} alt="" />
             <div className="blog-post__details">

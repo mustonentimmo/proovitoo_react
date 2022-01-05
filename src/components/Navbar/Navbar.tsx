@@ -3,12 +3,14 @@ import NavHamburger from "../NavHamburger/NavHamburger";
 import './Navbar.scss'
 
 const Navbar = () => {
-    const [isOpen, SetOpen] = useState(false);
+    const [isOpen, SetOpen] = useState<boolean>(false);
     const handleHamburgerToggle = () => {
         SetOpen(prev => !prev);
     }
 
-    const links = [
+    type LinksType = {id: number, title: string}[];
+
+    const links: LinksType = [
         {id: 1, title: 'Home'},
         {id: 2, title: 'Blog'},
         {id: 3, title: 'Events'},
