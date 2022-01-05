@@ -10,8 +10,9 @@ const App = () => {
     let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
 
     const handleChange = (value: string) => {
+        let queryLowerCase = value.toLowerCase();
         let queryResults = posts.filter(post =>
-            post.title.toLowerCase().includes(value)
+            post.title.toLowerCase().includes(queryLowerCase)
         )
 
         setFilteredPosts(queryResults);
