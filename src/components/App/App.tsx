@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.scss';
 import Header from "../Header/Header";
 import Searchbar from "../Searchbar/Searchbar";
 import BlogPost from "../BlogPost/BlogPost";
 import { Post } from "../../common/types"
 import posts from "../../mock/post";
+import axios from "axios";
 
 const App = () => {
-    let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
+    let [posts, setPosts] = useState<Post[]>([]);
+    let [filteredPosts, setFilteredPosts] = useState<Post[]>( []);
+
+    useEffect( () => {
+        const getPosts = async () => {
+            try {
+                const response = await axios.get("https://61d6a18b35f71e0017c2e716.mockapi.io/Posts");
+                const postData = response.data;
+                setPosts(postData);
+                setFilteredPosts(postData);
+            } catch(error) {
+                console.log(error);
+            }
+        };
+        getPosts();
+    }, []);
 
     const handleChange = (value: string) => {
         let queryLowerCase = value.toLowerCase();
