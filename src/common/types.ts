@@ -1,4 +1,4 @@
-interface Post {
+export interface Post {
     id: number;
     title: string;
     postImg: string;
@@ -8,5 +8,3 @@ interface Post {
     postTags: string[];
     postFeedback: string[];
 }
-
-export default Post;

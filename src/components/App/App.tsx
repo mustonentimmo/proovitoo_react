@@ -1,21 +1,38 @@
+import { useState } from "react";
 import './App.scss';
 import Header from "../Header/Header";
+import Searchbar from "../Searchbar/Searchbar";
 import BlogPost from "../BlogPost/BlogPost";
+import { Post } from "../../common/types"
 import posts from "../../mock/post";
 
-const App = () => (
+const App = () => {
+    let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
+
+    const handleChange = (value: string) => {
+        let queryLowerCase = value.toLowerCase();
+        let queryResults = posts.filter(post =>
+            post.title.toLowerCase().includes(queryLowerCase)
+        )
+
+        setFilteredPosts(queryResults);
+    }
+
+    return (
     <div className="app">
         <div className="app__grid-container">
-            <Header />
+            <Header/>
             <main className="app__inner">
+                <Searchbar onInputChange={handleChange}/>
                 {
-                    posts.map(post =>
+                    filteredPosts.map(post =>
                         <BlogPost key={post.id} post={post}/>
                     )
                 }
             </main>
         </div>
     </div>
-)
+    )
+}
 
 export default App;
