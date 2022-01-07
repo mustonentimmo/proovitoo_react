@@ -1,4 +1,4 @@
-import { Post } from "../common/types";
+import { Post } from "../common/types"
 
 const posts: Post[] = [
     {
