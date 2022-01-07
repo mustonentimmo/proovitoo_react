@@ -2,7 +2,7 @@ import React from 'react';
 import "./Avatar.scss"
 
 interface AvatarProps {
-    imgUrl: string
+    imgUrl?: string
 }
 
 const Avatar: React.FC<AvatarProps> = ({ imgUrl }) => (
