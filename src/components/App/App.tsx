@@ -24,6 +24,14 @@ const App = () => {
         setFilteredPosts(queryResults);
     }
 
+    const mapEvent = (eventType: EventType[]) => {
+        return eventType.map(event =>
+            <EventItem title={event.name} eventData={event.data}>
+                <Avatar imgUrl={event.profilePicture}/>
+            </EventItem>
+        )
+    }
+
     return (
     <div className="app">
         <div className="app__grid-container">
@@ -41,8 +49,14 @@ const App = () => {
 
                 </SidebarSection>
                 <SidebarSection title={"birthdays"}>
+                    {
+                        mapEvent(event.birthdays)
+                    }
                 </SidebarSection>
                 <SidebarSection title={"newcomers"}>
+                    {
+                        mapEvent(event.newComers)
+                    }
                 </SidebarSection>
             </Sidebar>
         </div>
