@@ -8,3 +8,9 @@ export interface Post {
     postTags: string[];
     postFeedback: string[];
 }
+
+export interface Event {
+    events: {}[];
+    birthdays: {}[];
+    newComers: {}[];
+}
