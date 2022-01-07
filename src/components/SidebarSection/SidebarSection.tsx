@@ -8,9 +8,9 @@ interface SidebarSectionProps {
 const SidebarSection: React.FC<SidebarSectionProps> = (props) => (
     <section className="sidebar-section">
         <div className="sidebar-section__header">
-            <div className="sidebar-section__title">
+            <h1 className="sidebar-section__title">
                 {props.header}
-            </div>
+            </h1>
         </div>
         <div className="sidebar-section__content">{props.children}</div>
     </section>
