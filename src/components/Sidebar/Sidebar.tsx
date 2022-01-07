@@ -1,7 +1,11 @@
 import React from "react";
 import "./Sidebar.scss";
 
-const Sidebar = (props) => (
+interface SidebarProps {
+    children: React.ReactNode
+}
+
+const Sidebar: React.FC<SidebarProps> = (props) => (
     <aside className="sidebar">
         {props.children}
     </aside>
