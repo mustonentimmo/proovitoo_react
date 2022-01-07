@@ -9,8 +9,15 @@ export interface Post {
     postFeedback: string[];
 }
 
+export type EventType = {
+    name: string;
+    profilePicture?: string;
+    date?: string;
+    data: string[];
+}
+
 export interface Event {
     events: {name: string, date: string, data: string[]}[];
-    birthdays: {name: string, profilePicture: string, data: string[]}[];
-    newComers: {}[];
+    birthdays: EventType[];
+    newComers: EventType[];
 }
