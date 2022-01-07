@@ -1,6 +1,6 @@
 import {Event} from "../common/types";
 
-export const event: Event = {
+const event: Event = {
     events: [
         {
             name: "UX Tartu",
@@ -53,3 +53,5 @@ export const event: Event = {
         },
     ]
 }
+
+export default event;
