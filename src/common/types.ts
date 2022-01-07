@@ -10,7 +10,7 @@ export interface Post {
 }
 
 export interface Event {
-    events: {}[];
-    birthdays: {}[];
+    events: {name: string, date: string, data: string[]}[];
+    birthdays: {name: string, profilePicture: string, data: string[]}[];
     newComers: {}[];
 }
