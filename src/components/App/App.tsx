@@ -2,6 +2,8 @@ import { useState } from "react";
 import './App.scss';
 import Header from "../Header/Header";
 import Searchbar from "../Searchbar/Searchbar";
+import Sidebar from "../Sidebar/Sidebar";
+import SidebarSection from "../SidebarSection/SidebarSection";
 import BlogPost from "../BlogPost/BlogPost";
 import { Post } from "../../common/types"
 import posts from "../../mock/post";
@@ -30,6 +32,17 @@ const App = () => {
                     )
                 }
             </main>
+            <Sidebar>
+                <SidebarSection title={"events"}>
+
+                </SidebarSection>
+                <SidebarSection title={"birthdays"}>
+
+                </SidebarSection>
+                <SidebarSection title={"newcomers"}>
+
+                </SidebarSection>
+            </Sidebar>
         </div>
     </div>
     )
