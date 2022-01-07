@@ -1,9 +1,10 @@
+import React from "react";
 import "./SidebarSection.scss";
 
-const SidebarSection = () => (
+const SidebarSection = (props) => (
     <section className="sidebar-section">
-        <div className="sidebar-section__header"></div>
-        <div className="sidebar-section__content"></div>
+        <div className="sidebar-section__header">{props.header}</div>
+        <div className="sidebar-section__content">{props.children}</div>
     </section>
 )
 
