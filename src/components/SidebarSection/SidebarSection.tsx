@@ -3,7 +3,6 @@ import "./SidebarSection.scss";
 
 interface SidebarSectionProps {
     header: string;
-    content: React.ReactElement;
 }
 
 const SidebarSection: React.FC<SidebarSectionProps> = (props) => (
