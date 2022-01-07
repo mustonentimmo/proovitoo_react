@@ -1,7 +1,13 @@
+import React from 'react';
 import "./EventItem.scss";
 import HorizontalList from "../HorizontalList/HorizontalList";
 
-const EventItem = (props) => {
+interface EventItemProps {
+    title: string;
+    eventData: string[];
+}
+
+const EventItem: React.FC<EventItemProps>= (props) => {
 
     const { title, children, eventData } = props;
 
