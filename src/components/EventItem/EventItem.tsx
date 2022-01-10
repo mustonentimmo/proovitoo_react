@@ -16,7 +16,7 @@ const EventItem: React.FC<EventItemProps>= (props) => {
         {children}
         <div className="event-item__info">
             <h3 className="event-item__title">{title}</h3>
-            <HorizontalList feedback={eventData}/>
+            <HorizontalList feedback={eventData} className={"horizontal-list--small-margin-top"}/>
         </div>
     </div>
     )
