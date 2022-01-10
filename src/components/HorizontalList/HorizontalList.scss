@@ -3,6 +3,10 @@
   color: var(--clr-grey);
   margin-top: var(--spc-small);
 
+  &--small-margin-top {
+    margin-top: 0.5rem;;
+  }
+
   &__item {
     display: inline;
     margin: 0;
