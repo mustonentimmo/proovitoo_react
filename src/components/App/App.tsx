@@ -7,6 +7,7 @@ import SidebarSection from "../SidebarSection/SidebarSection";
 import Avatar from "../Avatar/Avatar";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
+import Date from "../Date/Date";
 import { Post, EventType } from "../../common/types"
 import posts from "../../mock/post";
 import event from "../../mock/event"
@@ -27,7 +28,9 @@ const App = () => {
     const mapEvent = (eventType: EventType[]) => {
         return eventType.map(event =>
             <EventItem title={event.name} eventData={event.data}>
-                <Avatar imgUrl={event.profilePicture}/>
+                {
+                    <Avatar imgUrl={event.profilePicture}/>
+                }
             </EventItem>
         )
     }
@@ -46,7 +49,9 @@ const App = () => {
             </main>
             <Sidebar>
                 <SidebarSection title={"events"}>
-
+                    {
+                        mapEvent(event.events)
+                    }
                 </SidebarSection>
                 <SidebarSection title={"birthdays"}>
                     {
