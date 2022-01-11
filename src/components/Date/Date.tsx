@@ -2,7 +2,7 @@ import React from 'react';
 import "./Date.scss";
 
 interface DateProps {
-    info: string;
+    info?: string;
 }
 
 const Date: React.FC<DateProps> = ({ info }) => (
