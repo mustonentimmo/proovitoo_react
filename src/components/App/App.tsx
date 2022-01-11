@@ -4,10 +4,8 @@ import Header from "../Header/Header";
 import Searchbar from "../Searchbar/Searchbar";
 import Sidebar from "../Sidebar/Sidebar";
 import SidebarSection from "../SidebarSection/SidebarSection";
-import Avatar from "../Avatar/Avatar";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
-import Date from "../Date/Date";
 import { Post, EventType } from "../../common/types"
 import posts from "../../mock/post";
 import event from "../../mock/event"
@@ -25,13 +23,9 @@ const App = () => {
         setFilteredPosts(queryResults);
     }
 
-    const mapEvent = (eventType: EventType[]) => {
+    const mapEvent = (eventType: EventType[], isAvatar?: boolean) => {
         return eventType.map(event =>
-            <EventItem title={event.name} eventData={event.data}>
-                {
-                    <Avatar imgUrl={event.profilePicture}/>
-                }
-            </EventItem>
+            <EventItem title={event.name} eventData={event.data} eventDate={event.date} isAvatar={isAvatar} avatar={event.profilePicture} />
         )
     }
 
@@ -55,12 +49,12 @@ const App = () => {
                 </SidebarSection>
                 <SidebarSection title={"birthdays"}>
                     {
-                        mapEvent(event.birthdays)
+                        mapEvent(event.birthdays,  true)
                     }
                 </SidebarSection>
                 <SidebarSection title={"newcomers"}>
                     {
-                        mapEvent(event.newComers)
+                        mapEvent(event.newComers, true)
                     }
                 </SidebarSection>
             </Sidebar>
