@@ -6,10 +6,9 @@ import Sidebar from "../Sidebar/Sidebar";
 import SidebarSection from "../SidebarSection/SidebarSection";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
-import { Post, EventType } from "../../common/types"
+import { Post, EventEntity } from "../../common/types"
 import posts from "../../mock/post";
-import event from "../../mock/event"
-
+import events from "../../mock/event"
 
 const App = () => {
     let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
@@ -23,7 +22,7 @@ const App = () => {
         setFilteredPosts(queryResults);
     }
 
-    const mapEvent = (eventType: EventType[], isAvatar?: boolean) => {
+    const mapEvent = (eventType: EventEntity[], isAvatar?: boolean) => {
         return eventType.map(event =>
             <EventItem title={event.name} eventData={event.data} eventDate={event.date} isAvatar={isAvatar} avatar={event.profilePicture} />
         )
@@ -44,17 +43,17 @@ const App = () => {
             <Sidebar>
                 <SidebarSection title={"events"}>
                     {
-                        mapEvent(event.events)
+                        mapEvent(events.events)
                     }
                 </SidebarSection>
                 <SidebarSection title={"birthdays"}>
                     {
-                        mapEvent(event.birthdays,  true)
+                        mapEvent(events.birthdays,  true)
                     }
                 </SidebarSection>
                 <SidebarSection title={"newcomers"}>
                     {
-                        mapEvent(event.newComers, true)
+                        mapEvent(events.newComers, true)
                     }
                 </SidebarSection>
             </Sidebar>

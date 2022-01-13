@@ -1,6 +1,6 @@
-import {Event} from "../common/types";
+import {Events} from "../common/types";
 
-const event: Event = {
+const events: Events = {
     events: [
         {
             name: "UX Tartu",
@@ -9,12 +9,12 @@ const event: Event = {
         },
         {
             name: "Christmas party",
-            date: "11 Dets",
+            date: "16 Dets",
             data: ["SPARK", "Tartu", "Going"]
         },
         {
             name: "Refresh 2021",
-            date: "11 Dets",
+            date: "19 Dets",
             data: ["SPARK", "Tartu"]
         },
     ],
@@ -54,4 +54,4 @@ const event: Event = {
     ]
 }
 
-export default event;
+export default events;
