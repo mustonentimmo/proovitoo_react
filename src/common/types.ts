@@ -9,7 +9,7 @@ export interface Post {
     postFeedback: string[];
 }
 
-export type EventType = {
+export interface EventType {
     name: string;
     profilePicture?: string;
     date?: string;
