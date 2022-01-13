@@ -17,7 +17,7 @@ export interface EventEntity {
 }
 
 export interface Events {
-    events: {name: string, date: string, data: string[]}[];
+    events: EventEntity[];
     birthdays: EventEntity[];
     newComers: EventEntity[];
 }
