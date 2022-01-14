@@ -8,8 +8,8 @@ import posts from "../../mock/post";
 import axios from "axios";
 
 const App = () => {
-    let [posts, setPosts] = useState<Post[]>([]);
-    let [filteredPosts, setFilteredPosts] = useState<Post[]>( []);
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [filteredPosts, setFilteredPosts] = useState<Post[]>( []);
 
     useEffect( () => {
         const getPosts = async () => {
