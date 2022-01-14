@@ -22,9 +22,9 @@ const App = () => {
         setFilteredPosts(queryResults);
     }
 
-    const mapEvent = (eventType: EventEntity[], isAvatar?: boolean) => {
+    const mapEvent = (eventType: EventEntity[]) => {
         return eventType.map(event =>
-            <EventItem title={event.name} eventData={event.data} eventDate={event.date} isAvatar={isAvatar} avatar={event.profilePicture} />
+            <EventItem event={event}/>
         )
     }
 
@@ -48,12 +48,12 @@ const App = () => {
                 </SidebarSection>
                 <SidebarSection title={"birthdays"}>
                     {
-                        mapEvent(events.birthdays,  true)
+                        mapEvent(events.birthdays)
                     }
                 </SidebarSection>
                 <SidebarSection title={"newcomers"}>
                     {
-                        mapEvent(events.newComers, true)
+                        mapEvent(events.newComers)
                     }
                 </SidebarSection>
             </Sidebar>
