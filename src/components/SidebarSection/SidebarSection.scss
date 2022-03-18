@@ -1,0 +1,25 @@
+.sidebar-section {
+  &:not(:first-of-type) {
+    margin-top: 4rem;
+  }
+
+  &__header {
+    min-height: 4.8rem;
+  }
+
+  &__title {
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid var(--clr-black);
+    font-weight: var(--fw-bold);
+  }
+
+  &__content {
+    margin-top: var(--spc-regular);
+  }
+}
+
+
+
+

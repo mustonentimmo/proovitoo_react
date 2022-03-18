@@ -13,5 +13,3 @@ export interface Post {
     postFeedback?: string[];
     content?: string;
 }
-
-
