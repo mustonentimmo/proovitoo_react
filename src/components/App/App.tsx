@@ -2,9 +2,13 @@ import { useState } from "react";
 import './App.scss';
 import Header from "../Header/Header";
 import Searchbar from "../Searchbar/Searchbar";
+import Sidebar from "../Sidebar/Sidebar";
+import SidebarSection from "../SidebarSection/SidebarSection";
+import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
-import { Post } from "../../common/types"
+import { Post, EventEntity } from "../../common/types"
 import posts from "../../mock/post";
+import events from "../../mock/event"
 
 const App = () => {
     let [filteredPosts, setFilteredPosts] = useState<Post[]>(posts);
@@ -16,6 +20,12 @@ const App = () => {
         )
 
         setFilteredPosts(queryResults);
+    }
+
+    const mapEvent = (eventType: EventEntity[]) => {
+        return eventType.map(event =>
+            <EventItem event={event}/>
+        )
     }
 
     return (
@@ -30,6 +40,23 @@ const App = () => {
                     )
                 }
             </main>
+            <Sidebar>
+                <SidebarSection title={"events"}>
+                    {
+                        mapEvent(events.events)
+                    }
+                </SidebarSection>
+                <SidebarSection title={"birthdays"}>
+                    {
+                        mapEvent(events.birthdays)
+                    }
+                </SidebarSection>
+                <SidebarSection title={"newcomers"}>
+                    {
+                        mapEvent(events.newComers)
+                    }
+                </SidebarSection>
+            </Sidebar>
         </div>
     </div>
     )

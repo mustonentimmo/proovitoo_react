@@ -8,3 +8,16 @@ export interface Post {
     postTags: string[];
     postFeedback: string[];
 }
+
+export interface EventEntity {
+    name: string;
+    profilePicture?: string;
+    date?: string;
+    data: string[];
+}
+
+export interface Events {
+    events: EventEntity[];
+    birthdays: EventEntity[];
+    newComers: EventEntity[];
+}
