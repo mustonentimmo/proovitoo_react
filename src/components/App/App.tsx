@@ -6,8 +6,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import SidebarSection from "../SidebarSection/SidebarSection";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
-import { Post, EventEntity } from "../../common/types"
-import posts from "../../mock/post";
+import { Post, EventEntity } from "../../common/types";
+import events from "../../mock/event"
 import axios from "axios";
 
 
