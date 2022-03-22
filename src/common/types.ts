@@ -1,3 +1,5 @@
+import {FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE} from "../redux/postTypes";
+
 export interface Post {
     id: number;
     title: string;
@@ -26,3 +28,12 @@ export interface Events {
     birthdays: EventEntity[];
     newComers: EventEntity[];
 }
+
+export interface InitialState {
+    loading: boolean;
+    posts: Post[];
+    error: {};
+}
+
+export type Action = | { type: typeof FETCH_POSTS_REQUEST }
+    | { type: typeof FETCH_POSTS_SUCCESS; payload: Post[] } | { type: typeof FETCH_POSTS_FAILURE, payload: {}}
