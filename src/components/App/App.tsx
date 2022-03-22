@@ -1,37 +1,48 @@
 import { useState, useEffect } from "react";
 import './App.scss';
+
 import Header from "../Header/Header";
 import Searchbar from "../Searchbar/Searchbar";
 import Sidebar from "../Sidebar/Sidebar";
 import SidebarSection from "../SidebarSection/SidebarSection";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
+import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
+
 import { Post, EventEntity } from "../../common/types";
 import events from "../../mock/event"
-import axios from "axios";
 
+import { Provider, useDispatch, useSelector, RootStateOrAny } from 'react-redux';
+import {store, fetchPosts} from '../../redux'
+
+const AppWrapper = () => {
+    return (
+        <Provider store={store}>
+            <App />
+        </Provider>
+    )
+}
 
 const App = () => {
-    const [posts, setPosts] = useState<Post[]>([]);
-    const [filteredPosts, setFilteredPosts] = useState<Post[]>( []);
+    const dispatch = useDispatch();
+    const [posts, setPosts] = useState<Post[]>( []);
+    const [filteredPosts, setFilteredPosts] = useState<Post[]>();
+
+    useEffect(() => {
+        dispatch(fetchPosts());
+    }, [dispatch]);
+
+    const postsData = useSelector((state: RootStateOrAny) => state && state.posts.data);
+    const isLoading = useSelector((state: RootStateOrAny) => state && state.loading);
 
     useEffect( () => {
-        const getPosts = async () => {
-            try {
-                const response = await axios.get("https://61d6a18b35f71e0017c2e716.mockapi.io/Posts");
-                const postData = response.data;
-                setPosts(postData);
-                setFilteredPosts(postData);
-            } catch(error) {
-                console.log(error);
-            }
-        };
-        getPosts();
-    }, []);
+        setPosts(postsData);
+        setFilteredPosts(postsData)
+    }, [postsData])
 
     const handleChange = (value: string) => {
         let queryLowerCase = value.toLowerCase();
-        let queryResults = posts.filter(post =>
+        let queryResults = posts.filter((post: Post) =>
             post.title.toLowerCase().includes(queryLowerCase)
         )
 
@@ -39,19 +50,20 @@ const App = () => {
     }
 
     const mapEvent = (eventType: EventEntity[]) => {
-        return eventType.map(event =>
-            <EventItem event={event}/>
+        return eventType.map((event, index) =>
+            <EventItem key={index} event={event}/>
         )
     }
 
     return (
-    <div className="app">
-        <div className="app__grid-container">
+        <div className="app">
+            <div className="app__grid-container">
             <Header/>
             <main className="app__inner">
                 <Searchbar onInputChange={handleChange}/>
                 {
-                    filteredPosts.map(post =>
+                    isLoading ? <LoadingIndicator/> :
+                    filteredPosts && filteredPosts.map((post: Post) =>
                         <BlogPost key={post.id} post={post}/>
                     )
                 }
@@ -78,4 +90,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default AppWrapper;
