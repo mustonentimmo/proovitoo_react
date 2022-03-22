@@ -41,8 +41,8 @@ const App = () => {
     }, [postsData])
 
     const handleChange = (value: string) => {
-        let queryLowerCase = value.toLowerCase();
-        let queryResults = posts.filter((post: Post) =>
+        const queryLowerCase = value.toLowerCase();
+        const queryResults = posts.filter((post: Post) =>
             post.title.toLowerCase().includes(queryLowerCase)
         )
 
