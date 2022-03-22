@@ -32,7 +32,7 @@ const App = () => {
         dispatch(fetchPosts());
     }, [dispatch]);
 
-    const postsData = useSelector((state: RootStateOrAny) => state && state.posts.data);
+    const postsData = useSelector((state: RootStateOrAny) => state && state.posts);
     const isLoading = useSelector((state: RootStateOrAny) => state && state.loading);
 
     useEffect( () => {

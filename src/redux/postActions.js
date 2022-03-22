@@ -10,7 +10,7 @@ export const fetchPostsRequest = () => {
 export const fetchPostsSuccess = (posts) => {
     return {
         type: FETCH_POSTS_SUCCESS,
-        payload: posts
+        payload: posts.data
     }
 }
 
