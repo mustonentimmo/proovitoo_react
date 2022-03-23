@@ -29,7 +29,7 @@ export interface Events {
     newComers: EventEntity[];
 }
 
-export interface InitialState {
+export interface RootState {
     loading: boolean;
     posts: Post[];
     error: {};

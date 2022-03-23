@@ -9,7 +9,7 @@ import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
 import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 
-import { Post, EventEntity, InitialState } from "../../common/types";
+import { Post, EventEntity, RootState } from "../../common/types";
 import events from "../../mock/event"
 
 import { Provider, useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
@@ -25,7 +25,7 @@ const AppWrapper = () => {
 
 const App = () => {
     const dispatch = useDispatch();
-    const useAppSelector: TypedUseSelectorHook<InitialState> = useSelector
+    const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
     const [posts, setPosts] = useState<Post[]>( []);
     const [filteredPosts, setFilteredPosts] = useState<Post[]>();
@@ -39,7 +39,7 @@ const App = () => {
 
     useEffect( () => {
         setPosts(postsData);
-        setFilteredPosts(postsData)
+        setFilteredPosts(postsData);
     }, [postsData])
 
     const handleChange = (value: string) => {

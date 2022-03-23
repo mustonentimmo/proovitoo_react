@@ -1,7 +1,7 @@
 import {FETCH_POSTS_REQUEST, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE} from "./postTypes";
-import { InitialState, Action } from "../common/types";
+import { RootState, Action } from "../common/types";
 
-export const initialState: InitialState = {
+export const initialState: RootState = {
     loading: false,
     posts: [],
     error: {}
