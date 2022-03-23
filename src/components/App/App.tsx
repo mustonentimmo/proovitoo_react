@@ -7,13 +7,14 @@ import Sidebar from "../Sidebar/Sidebar";
 import SidebarSection from "../SidebarSection/SidebarSection";
 import EventItem from "../EventItem/EventItem";
 import BlogPost from "../BlogPost/BlogPost";
-import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
+import Message from "../Message/Message";
 
-import { Post, EventEntity, RootState } from "../../common/types";
+import { Post, EventEntity } from "../../common/types";
 import events from "../../mock/event"
 
-import { Provider, useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import {store, fetchPosts} from '../../redux'
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { store } from '../../store';
+import { fetchPosts, postsSelector } from "../../features/postsSlice";
 
 const AppWrapper = () => {
     return (
@@ -25,26 +26,24 @@ const AppWrapper = () => {
 
 const App = () => {
     const dispatch = useDispatch();
-    const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-    const [posts, setPosts] = useState<Post[]>( []);
+    const [postsData, setPostsData] = useState<Post[]>( []);
     const [filteredPosts, setFilteredPosts] = useState<Post[]>();
 
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
 
-    const postsData = useAppSelector((state) => state && state.posts);
-    const isLoading = useAppSelector((state ) => state && state.loading);
+    const { posts, loading, hasError } = useSelector(postsSelector);
 
     useEffect( () => {
-        setPosts(postsData);
-        setFilteredPosts(postsData);
-    }, [postsData])
+        setPostsData(posts);
+        setFilteredPosts(posts);
+    }, [posts])
 
     const handleChange = (value: string) => {
         const queryLowerCase = value.toLowerCase();
-        const queryResults = posts.filter((post: Post) =>
+        const queryResults = postsData.filter((post: Post) =>
             post.title.toLowerCase().includes(queryLowerCase)
         )
 
@@ -64,7 +63,7 @@ const App = () => {
             <main className="app__inner">
                 <Searchbar onInputChange={handleChange}/>
                 {
-                    isLoading ? <LoadingIndicator/> :
+                    hasError ? <Message text='Loading posts failed' /> : loading ? <Message text='Loading posts...'/> :
                     filteredPosts && filteredPosts.map((post: Post) =>
                         <BlogPost key={post.id} post={post}/>
                     )
